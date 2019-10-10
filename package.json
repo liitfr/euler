@@ -1,0 +1,29 @@
+{
+  "name": "euler",
+  "version": "1.0.0",
+  "description": "Project Euler",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-config-airbnb-base": "^14.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/liitfr/euler.git"
+  },
+  "keywords": [
+    "Project",
+    "Euler"
+  ],
+  "author": "liitfr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liitfr/euler/issues"
+  },
+  "homepage": "https://github.com/liitfr/euler#readme"
+}
