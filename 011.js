@@ -1,3 +1,6 @@
+/* eslint-disable max-len */
+
+console.time('11');
 const grid = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [
@@ -20,7 +23,7 @@ const grid = [
     4,
     56,
     62,
-    0
+    0,
   ],
   [
     81,
@@ -42,7 +45,7 @@ const grid = [
     49,
     13,
     36,
-    65
+    65,
   ],
   [52, 70, 95, 23, 4, 60, 11, 42, 69, 24, 68, 56, 1, 32, 56, 71, 37, 2, 36, 91],
   [
@@ -65,7 +68,7 @@ const grid = [
     66,
     33,
     13,
-    80
+    80,
   ],
   [
     24,
@@ -87,7 +90,7 @@ const grid = [
     35,
     17,
     12,
-    50
+    50,
   ],
   [
     32,
@@ -109,7 +112,7 @@ const grid = [
     18,
     38,
     64,
-    70
+    70,
   ],
   [
     67,
@@ -131,7 +134,7 @@ const grid = [
     66,
     49,
     94,
-    21
+    21,
   ],
   [
     24,
@@ -153,7 +156,7 @@ const grid = [
     34,
     89,
     63,
-    72
+    72,
   ],
   [21, 36, 23, 9, 75, 0, 76, 44, 20, 45, 35, 14, 0, 61, 33, 97, 34, 31, 33, 95],
   [78, 17, 53, 28, 22, 75, 31, 67, 15, 94, 3, 80, 4, 62, 16, 14, 9, 53, 56, 92],
@@ -177,7 +180,7 @@ const grid = [
     36,
     29,
     85,
-    57
+    57,
   ],
   [86, 56, 0, 48, 35, 71, 89, 7, 5, 44, 44, 37, 44, 60, 21, 58, 51, 54, 17, 58],
   [
@@ -200,7 +203,7 @@ const grid = [
     4,
     89,
     55,
-    40
+    40,
   ],
   [4, 52, 8, 83, 97, 35, 99, 16, 7, 97, 57, 32, 16, 26, 26, 79, 33, 27, 98, 66],
   [
@@ -223,7 +226,7 @@ const grid = [
     63,
     93,
     53,
-    69
+    69,
   ],
   [
     4,
@@ -245,7 +248,7 @@ const grid = [
     40,
     62,
     76,
-    36
+    36,
   ],
   [
     20,
@@ -267,7 +270,7 @@ const grid = [
     74,
     4,
     36,
-    16
+    16,
   ],
   [
     20,
@@ -289,26 +292,19 @@ const grid = [
     23,
     57,
     5,
-    54
+    54,
   ],
-  [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
+  [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],
 ];
-
-const get4down = (y, x) =>
-  grid[y][x] * grid[y + 1][x] * grid[y + 2][x] * grid[y + 3][x];
-const get4right = (y, x) =>
-  grid[y][x] * grid[y][x + 1] * grid[y][x + 2] * grid[y][x + 3];
-const get4diagr = (y, x) =>
-  grid[y][x] * grid[y + 1][x + 1] * grid[y + 2][x + 2] * grid[y + 3][x + 3];
-const get4diagl = (y, x) =>
-  grid[y][x] * grid[y + 1][x - 1] * grid[y + 2][x - 2] * grid[y + 3][x - 3];
-
+const get4down = (y, x) => grid[y][x] * grid[y + 1][x] * grid[y + 2][x] * grid[y + 3][x];
+const get4right = (y, x) => grid[y][x] * grid[y][x + 1] * grid[y][x + 2] * grid[y][x + 3];
+const get4diagr = (y, x) => grid[y][x] * grid[y + 1][x + 1] * grid[y + 2][x + 2] * grid[y + 3][x + 3];
+const get4diagl = (y, x) => grid[y][x] * grid[y + 1][x - 1] * grid[y + 2][x - 2] * grid[y + 3][x - 3];
 const maxY = 20;
 const maxX = 20;
-
 let result = 0;
-for (y = 0; y < maxY; y++) {
-  for (x = 0; x < maxX; x++) {
+for (let y = 0; y < maxY; y += 1) {
+  for (let x = 0; x < maxX; x += 1) {
     const down = y <= maxY - 4 ? get4down(y, x) : 0;
     const right = x <= maxX - 4 ? get4right(y, x) : 0;
     const diagr = y <= maxY - 4 && x <= maxX - 4 ? get4diagr(y, x) : 0;
@@ -316,5 +312,5 @@ for (y = 0; y < maxY; y++) {
     result = Math.max(result, down, right, diagr, diagl);
   }
 }
-
 console.log(result);
+console.timeEnd('11');

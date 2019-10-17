@@ -1,8 +1,7 @@
+console.time('31');
 const coins = [200, 100, 50, 20, 10, 5, 2, 1];
-
 const goal = 200;
 const combinations = [];
-
 const buildTree = (pile, tot, choices) => {
   choices.forEach((coin, index) => {
     const newPile = [...pile, coin];
@@ -13,7 +12,6 @@ const buildTree = (pile, tot, choices) => {
     }
   });
 };
-
 buildTree([], 0, coins);
-
 console.log(combinations.length);
+console.timeEnd('31');

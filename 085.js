@@ -1,16 +1,13 @@
-console.time("85");
-
+console.time('85');
 const max = 100;
 const target = 2000000;
-
 let bestDist = target;
 let bestArea;
-
-for (xGrid = 1; xGrid <= max; xGrid++) {
-  for (yGrid = xGrid; yGrid <= max; yGrid++) {
+for (let xGrid = 1; xGrid <= max; xGrid += 1) {
+  for (let yGrid = xGrid; yGrid <= max; yGrid += 1) {
     let combinations = 0;
-    for (x = 1; x <= xGrid; x++) {
-      for (y = 1; y <= yGrid; y++) {
+    for (let x = 1; x <= xGrid; x += 1) {
+      for (let y = 1; y <= yGrid; y += 1) {
         combinations += (xGrid - x + 1) * (yGrid - y + 1);
       }
     }
@@ -21,6 +18,5 @@ for (xGrid = 1; xGrid <= max; xGrid++) {
     }
   }
 }
-
 console.log(bestArea);
-console.timeEnd("85");
+console.timeEnd('85');

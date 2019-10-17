@@ -1,5 +1,4 @@
-console.time("2");
-
+console.time('2');
 const fibo = (previous = [1, 2], tot = 2) => {
   const [a, b] = previous;
   const c = a + b;
@@ -9,7 +8,5 @@ const fibo = (previous = [1, 2], tot = 2) => {
     console.log(tot);
   }
 };
-
 fibo();
-
-console.timeEnd("2");
+console.timeEnd('2');
