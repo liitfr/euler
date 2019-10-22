@@ -4,11 +4,15 @@
   "description": "Project Euler",
   "main": "index.js",
   "dependencies": {
+    "big-number": "^2.0.0",
+    "node-dijkstra": "^2.5.0",
+    "written-number": "^0.9.1"
+  },
+  "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-config-airbnb-base": "^14.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
