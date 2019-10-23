@@ -20,8 +20,3 @@ const input = `
 `;
 console.log(findPath(normalizeGraph(input)));
 console.timeEnd('18');
-
-module.exports = {
-  findPath,
-  normalizeGraph,
-};

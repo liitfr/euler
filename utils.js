@@ -60,9 +60,28 @@ const factorialize = (num) => {
   return num * factorialize(num - 1);
 };
 
+const combinations = (str) => {
+  const combin = [];
+  const recursive = (done, remaining) => {
+    if (remaining.length === 0) {
+      combin.push(done);
+    } else {
+      for (let i = 0; i < remaining.length; i += 1) {
+        recursive(
+          [...done, remaining[i]],
+          [...remaining.slice(0, i), ...remaining.slice(i + 1)],
+        );
+      }
+    }
+  };
+  recursive([], [...str]);
+  return combin;
+};
+
 module.exports = {
   findPrimeFactors,
   isPrime,
   listDivisors,
   factorialize,
+  combinations,
 };
