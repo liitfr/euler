@@ -45,7 +45,7 @@ const listDivisors = (n) => {
   for (let i = 1; i <= end; i += 1) {
     if (n % i === 0) {
       small.push(i);
-      if (i * i != n) {
+      if (i ** 2 !== n) {
         large.push(n / i);
       }
     }
