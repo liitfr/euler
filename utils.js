@@ -54,6 +54,12 @@ const listDivisors = (n) => {
   return small.concat(large);
 };
 
+const listProperDivisors = (n) => {
+  const divisors = listDivisors(n);
+  divisors.pop();
+  return divisors;
+};
+
 const factorialize = (num) => {
   if (num < 0) return -1;
   if (num === 0) return 1;
@@ -78,10 +84,26 @@ const combinations = (str) => {
   return combin;
 };
 
+const quadratic = (a, b, c) => {
+  const d = b ** 2 - 4 * a * c;
+  if (d < 0) {
+    return [];
+  }
+  if (d === 0) {
+    return [(-1 * b) / (2 * a)];
+  }
+  return [(-1 * b - Math.sqrt(d)) / (2 * a), (-1 * b + Math.sqrt(d)) / (2 * a)];
+};
+
+const wordToNumber = (word) => [...word].map((letter) => letter.charCodeAt(0) - 64).reduce((a, b) => a + b);
+
 module.exports = {
   findPrimeFactors,
   isPrime,
   listDivisors,
+  listProperDivisors,
   factorialize,
   combinations,
+  quadratic,
+  wordToNumber,
 };

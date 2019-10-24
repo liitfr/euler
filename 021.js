@@ -1,9 +1,8 @@
-const { listDivisors } = require('./utils');
+const { listProperDivisors } = require('./utils');
 
 console.time('21');
 const d = (n) => {
-  const div = listDivisors(n);
-  div.pop();
+  const div = listProperDivisors(n);
   return div.length > 0 ? div.reduce((a, b) => a + b) : null;
 };
 const nums = new Set();
