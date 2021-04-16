@@ -97,6 +97,13 @@ const quadratic = (a, b, c) => {
 
 const wordToNumber = (word) => [...word].map((letter) => letter.charCodeAt(0) - 64).reduce((a, b) => a + b);
 
+const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+
+const reduceDivision = ({num, denom}) => {
+  gcdVal = gcd(num, denom);
+  return {num: num / gcdVal, denom: denom / gcdVal};
+};
+
 module.exports = {
   findPrimeFactors,
   isPrime,
@@ -106,4 +113,6 @@ module.exports = {
   combinations,
   quadratic,
   wordToNumber,
+  gcd,
+  reduceDivision,
 };
